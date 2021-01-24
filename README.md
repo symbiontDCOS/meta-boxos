@@ -2,4 +2,4 @@
 
 Namespace Operating System.  
 
-This repo contains yocto distro layers for building boxOS.
+This repo contains yocto distro meta-layers for building boxOS.
