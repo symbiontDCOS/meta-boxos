@@ -1,0 +1,71 @@
+#
+# BoxOS Namespace Operating System
+#
+# Copyright (c) Robert Callicotte, 2020
+#
+# Authors:
+#  Robert Callicotte <rcallicotte@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+#
+
+header:
+  version: 10
+  includes: 
+    - kas-local.yml
+
+distro: boxos
+machine: intel-corei7-64
+target: boxos-image
+defaults:
+  repos:
+    refspec: dunfell
+
+repos:
+  poky:
+    url: git://git.yoctoproject.org/poky.git
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+  meta-intel:
+    url: git://git.yoctoproject.org/meta-intel.git
+  meta-openembedded:
+    url: git://git.openembedded.org/meta-openembedded.git
+    layers:
+      meta-oe:
+      meta-python:
+      meta-filesystems:        
+      meta-networking:
+      meta-webserver:        
+  meta-cloud-services:            
+    url: git://git.yoctoproject.org/meta-cloud-services.git
+  meta-virtualization:  
+    url: git://git.yoctoproject.org/meta-virtualization.git
+  meta-boxos:  
+    url: git://github.com/c4t3l/meta-boxos.git
+    refspec: 5cc23e5492beb50d0441a99cd722453e47efcdca
+
+bblayers_conf_header:              
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""    
+
+local_conf_header:
+  standard: |
+    CONF_VERSION = "1"
+  package_rpm: |
+    PACKAGE_CLASSES = "package_rpm"      
+  debug_tweaks: |
+    EXTRA_IMAGE_FEATURES = "debug-tweaks"      
+  diskmon: |
+    BB_DISKMON_DIRS ??= "\
+        STOPTASKS,${TMPDIR},1G,100K \
+        STOPTASKS,${DL_DIR},1G,100K \
+        STOPTASKS,${SSTATE_DIR},1G,100K \
+        STOPTASKS,/tmp,100M,100K \
+        ABORT,${TMPDIR},100M,1K \
+        ABORT,${DL_DIR},100M,1K \
+        ABORT,${SSTATE_DIR},100M,1K \
+        ABORT,/tmp,10M,1K"
