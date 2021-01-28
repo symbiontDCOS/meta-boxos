@@ -129,10 +129,12 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-build/
+# Openembedded files
 poky/
 meta-cloud-services/
 meta-intel/
 meta-openembedded/
 meta-virtualization/
 kas-local.yml
+**.swp
+

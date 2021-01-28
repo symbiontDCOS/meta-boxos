@@ -72,6 +72,7 @@ uses `systemd-boot` as its bootloader.
 
 ## Notes
 
+```
 yocto01➜  build  ᐅ  bitbake-layers show-layers
 NOTE: Starting bitbake server...
 layer                 path                                      priority  
@@ -91,4 +92,4 @@ meta-virtualization   /home/rcallicotte/build/meta-virtualization  8
 meta-openstack        /home/rcallicotte/build/meta-cloud-services/meta-openstack  5  
 meta-boxos            /home/rcallicotte/build/meta-boxos        6  
 meta-saltstack        /home/rcallicotte/build/meta-saltstack    6  
-
+```
