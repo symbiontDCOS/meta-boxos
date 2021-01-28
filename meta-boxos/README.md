@@ -66,8 +66,7 @@ The control plane consists of a `SaltStack Minion` and `pystemd` python library.
 
 ## Image Attributes
 
-Meta-boxos provides for A/B type root partition based upon the [Discoverable Partitions Specification](https://systemd.io/DISCOVERABLE_PARTITIONS/) and 
-uses `systemd-boot` as its bootloader.
+Meta-boxos provides for A/B type root partition based upon the [Discoverable Partitions Specification](https://systemd.io/DISCOVERABLE_PARTITIONS/) and uses `systemd-boot` as its bootloader.
 
 
 ## Notes
