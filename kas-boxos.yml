@@ -43,8 +43,7 @@ repos:
   meta-virtualization:  
     url: git://git.yoctoproject.org/meta-virtualization.git
   meta-boxos:  
-    url: git://github.com/c4t3l/meta-boxos.git
-    refspec: 5cc23e5492beb50d0441a99cd722453e47efcdca
+    path: "${BBPATH}/../meta-boxos"
 
 bblayers_conf_header:              
   standard: |
